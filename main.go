@@ -33,6 +33,12 @@ func main() {
 		log.Fatalf("invalid parameters, all parameters (bucket, region, domain) required")
 	}
 
+	ossAccessKeyId := os.Getenv("OSS_ACCESS_KEY_ID")
+	ossAccessKeySecret := os.Getenv("OSS_ACCESS_KEY_SECRET")
+	if ossAccessKeyId == "" || ossAccessKeySecret == "" {
+		log.Fatalf("environment variables OSS_ACCESS_KEY_ID and OSS_ACCESS_KEY_SECRET must be set")
+	}
+
 	accessKeyId := os.Getenv("ALIDNS_ACCESS_KEY_ID")
 	accessKeySecret := os.Getenv("ALIDNS_ACCESS_KEY_SECRET")
 	if accessKeyId == "" || accessKeySecret == "" {

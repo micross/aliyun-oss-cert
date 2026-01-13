@@ -40,6 +40,8 @@ go install github.com/micross/aliyun-oss-cert@latest
 Set the following environment variables:
 
 ```bash
+export OSS_ACCESS_KEY_ID="your_oss_access_key_id"
+export OSS_ACCESS_KEY_SECRET="your_oss_access_key_secret"
 export ALIDNS_ACCESS_KEY_ID="your_alibaba_dns_access_key_id"
 export ALIDNS_ACCESS_KEY_SECRET="your_alibaba_dns_access_key_secret"
 ```
@@ -76,7 +78,7 @@ go run main.go -region=cn-hangzhou -bucket=my-bucket -domain=example.com
 
 ## Security Notes
 
-- Never commit your `ALIDNS_ACCESS_KEY_ID` and `ALIDNS_ACCESS_KEY_SECRET` to version control
+- Never commit your ACCESS KEY ID and ACCESS KEY SECRET to version control
 - Use dedicated AccessKey with minimal required permissions
 - The application uses Let's Encrypt Production CA by default
 
